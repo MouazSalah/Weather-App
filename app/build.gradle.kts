@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -66,4 +69,59 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // compose navigation
+    implementation(libs.compose.navigation)
+
+    // Room
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiletime)
+    //annotationProcessor("androidx.room:room-compiler:2.6.1")
+    //ksp("androidx.room:room-compiler:2.5.2")
+
+    // Network
+    implementation(libs.retrofit)
+
+    // Dependence Injection
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Test
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.hilt.android.testing)
+
+    implementation(libs.androidx.core.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    // gson converter
+    implementation(libs.converter.gson)
+
+    implementation(libs.jakewhartonTimber)
+
+
+    testImplementation(libs.junit)
+    implementation(libs.retrofit)
+    // implementation(libs.converterGson)
+    implementation(libs.okhttp)
+    implementation(libs.loggingInterceptor)
+    implementation(libs.coroutinesAndroid)
+    implementation(libs.coroutinesCore)
+    implementation(libs.serializationJson)
+    implementation(libs.gson)
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    //Chuck
+    debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
+    releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
+
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+
+
+
+
 }
