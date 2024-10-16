@@ -76,8 +76,7 @@ dependencies {
     // Room
     implementation(libs.room.runtime)
     ksp(libs.room.compiletime)
-    //annotationProcessor("androidx.room:room-compiler:2.6.1")
-    //ksp("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-ktx:2.6.1")
 
     // Network
     implementation(libs.retrofit)
@@ -120,8 +119,5 @@ dependencies {
     releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
 
     implementation("com.facebook.shimmer:shimmer:0.5.0")
-
-
-
 
 }
